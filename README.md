@@ -1,2 +1,2 @@
-#Frontend fejlesztő teszt feladat
+#Bored APP - frontend feladat
 
