@@ -1,6 +1,6 @@
-#Bored APP - frontend feladat
+# Bored APP - frontend feladat
 
-##Bevezető
+## Bevezető
 A feladatod egy frontend elkészítése lesz a [Bored API-hoz](http://www.boredapi.com/documentation) a repositoryban található [wireframe](https://raw.githubusercontent.com/ngabesz-wse/bored-app/master/Sr-frontend-test-1.jpg) alapján.
 A pontosabb részletek kidolgozása rád van bízva, viszont mivel ez egy frontendes feladat a végeredmény legyen esztétikus. A feladathoz bármilyen keretrendszert vagy eszközt felhasználhatsz.
 Általános elvárás hogy az Activity és List pagek közötti váltásnál nem történhet oldalújratöltés, valamint hogy az első megnyitásnál egy random eseményt kínáljon fel az app az Activity pagen az eseményhez igazodjanak a Activity detailek is.
