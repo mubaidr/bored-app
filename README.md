@@ -4,9 +4,8 @@
 Your task is to create a frontend app for the [Bored API](http://www.boredapi.com/documentation) according to this [wireframe](https://raw.githubusercontent.com/ngabesz-wse/bored-app/master/bored-app-wf.jpg).
 How you decide the small details is up to you but since this is a UI try to make it nice and usable. If it not specified you can use any tools and frameworks.
 ## Requirements
-- When the user first opens the Activity page suggest a random activity. Set the details according to the random event. 
+When the user first opens the Activity page suggest a random activity. Set the details according to the random event. 
 
-## Requirements
 **Activity page**:
 It is crucial so not realad the page when the user switches between the Activity and My list pages.
 If any of the activity details have been changed update the page without reloading it.
