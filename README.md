@@ -1,20 +1,21 @@
 # Bored APP - frontend feladat
 
 ## Bevezető
-A feladatod egy frontend elkészítése lesz a [Bored API-hoz](http://www.boredapi.com/documentation) a repositoryban található [wireframe](https://raw.githubusercontent.com/ngabesz-wse/bored-app/master/bored-app-wf.jpg) alapján.
-A pontosabb részletek kidolgozása rád van bízva, viszont mivel ez egy frontendes feladat a végeredmény legyen esztétikus. A feladathoz bármilyen keretrendszert vagy eszközt felhasználhatsz.
-Általános elvárás hogy az Activity és List pagek közötti váltásnál nem történhet oldalújratöltés, valamint hogy az első megnyitásnál egy random eseményt kínáljon fel az app az Activity pagen az eseményhez igazodjanak a Activity detailek is.
-Az oldalakat magába foglaló panelnek a böngészőben vertikálisan és horizontálisan középre igazítva kell megjelennie. 
+Your task is to create a frontend app for the [Bored API](http://www.boredapi.com/documentation) according to this [wireframe](https://raw.githubusercontent.com/ngabesz-wse/bored-app/master/bored-app-wf.jpg).
+How you decide the small details is up to you but since this is a UI try to make it nice and usable. If it not specified you can use any tools and frameworks.
+## Requirements
+- When the user first opens the Activity page suggest a random activity. Set the details according to the random event. 
 
-## Oldalak
+## Requirements
 **Activity page**:
-Az oldalon az első megnyitáskor már szerepeljen egy random esemény. Az eseményhez igazodjanak az Activity detailek is.
-Bármely activity detail megváltoztatása esetén frissüljön a felkínált esemény oldalújratöltés nélkül.
-A **Save for later** gomb megnyámásakor az aktuális eseményt tároljuk el és a List pagen jelenítsük meg a listában. 
-Az eltárolt eseményeknek a böngésző bezárásakor sem szabad elveszniük, a következő megnyitáskor a lista oldalon kell maradniuk a lehetőségekhez mérten a lehető legtöbb ideig.
-A **Hit me with a new one!** gomb megnyomásakor frissítsük az eseményt az aktuális activity detaileknek megfelelően.
+It is crucial so not realad the page when the user switches between the Activity and My list pages.
+If any of the activity details have been changed update the page without reloading it.
 
-**List page**:
-Az elmentett eseményeket és adataikat jelenítsük meg egy táblázatban. A táblázat minden sorának végén legyen egy action gomb amivel az adott sort törölni lehet.
-A **Clear all** gomb megnyomása esetén töröljük az összes mentett eseményt.
+After pressing the **Save for later** button store the current activity. It will be available in the List page in a list view.
+If the users closes the browser the app must remember the saved acivities and they must be available in the My list page.
+Pressing the **Hit me with a new one!** button will recommend a new activity according to the selected acivity details.
 
+**My list page**:
+Here the user can see the saved activities. At the end of every row there is an action button to delete the activity. 
+
+A **Clear all** will delete all the saved suggestions .
