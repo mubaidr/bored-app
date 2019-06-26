@@ -3,6 +3,8 @@
 ## Introduction
 Your task is to create a frontend app for the [Bored API](http://www.boredapi.com/documentation) according to this [wireframe](https://raw.githubusercontent.com/ngabesz-wse/bored-app/master/bored-app-wf.jpg).
 How you decide about the small details is up to you but since this is a UI try to make it nice and usable. 
+
+You also have to share the code and deploy your app where we can try it.
 ## Requirements
 - If it is not specified you can use any tools and frameworks.
 - When the user first opens the Activity page suggest a random activity. Set the details according to the random event. 
