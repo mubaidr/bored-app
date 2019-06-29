@@ -1,9 +1,12 @@
+import "bulma";
 import Vue from "vue";
-import './plugins/axios'
 import App from "./App.vue";
+import "./assets/animations.scss";
+import "./assets/main.scss";
+import "./plugins/axios";
+import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
-import "./registerServiceWorker";
 
 Vue.config.productionTip = false;
 
