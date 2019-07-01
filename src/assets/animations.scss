@@ -210,6 +210,17 @@
   transform: translateX(10px);
 }
 
+/* fade in-out*/
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.25s ease-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 /* List animation */
 .list-complete-item {
   transition: all 0.25s;

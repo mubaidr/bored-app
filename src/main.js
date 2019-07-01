@@ -1,4 +1,5 @@
-import "bulma";
+// import "bulma";
+import "bulma-pro/bulma.sass";
 import Vue from "vue";
 import App from "./App.vue";
 import "./assets/animations.scss";

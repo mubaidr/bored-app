@@ -1,14 +1,14 @@
 import Vue from "vue";
 import Vuex from "vuex";
-
+import createPersistedState from "vuex-persistedstate";
 const { axios } = Vue;
 
 Vue.use(Vuex);
 
-//TODO: enable persist state with local storage
-
 export default new Vuex.Store({
+  plugins: [createPersistedState()],
   state: {
+    isLoading: false,
     list: [],
     types: [
       "education",
@@ -44,6 +44,10 @@ export default new Vuex.Store({
 
     clear(state) {
       state.list = [];
+    },
+
+    isLoading(state, bool) {
+      state.isLoading = bool;
     }
   },
   actions: {
@@ -52,15 +56,18 @@ export default new Vuex.Store({
       context.commit("save", activity);
     },
 
-    loadActivity() {
-      return axios.get("/activity");
+    loadActivity(context) {
+      context.commit("isLoading", true);
+      return axios.get("/activity").then(res => {
+        context.commit("isLoading", false);
+
+        return res;
+      });
     },
 
     removeActivity(context, id) {
       context.commit("remove", id);
     },
-
-    loadAllActivities() {},
 
     clearAllActivities(context) {
       context.commit("clear");

@@ -128,7 +128,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .activity-textarea {
   height: 239px;
   max-height: 239px;

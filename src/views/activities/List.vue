@@ -9,7 +9,8 @@
         <th>Budget</th>
         <th></th>
       </thead>
-      <tbody>
+      <!-- <tbody> -->
+      <transition-group name="list-out" tag="tbody">
         <tr v-for="(activity, index) in list" :key="activity.key">
           <td>{{ index + 1 }}</td>
           <td>{{ activity.activity }}</td>
@@ -23,7 +24,9 @@
             </a>
           </td>
         </tr>
-      </tbody>
+      </transition-group>
+
+      <!-- </tbody> -->
     </table>
 
     <br />
