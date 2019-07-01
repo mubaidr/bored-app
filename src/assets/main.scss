@@ -1,0 +1,63 @@
+/*tab-content*/
+.tab-content {
+  margin: 2em;
+  padding: 1.5em;
+  border: 2px solid #eee;
+  border-radius: 10px;
+}
+
+/* Update label styles */
+.field {
+  .label {
+    color: #bbbbbb;
+    // font-weight: normal;
+  }
+
+  .help-text {
+    color: #bbbbbb;
+    font-size: small;
+  }
+}
+
+/*customize button styles*/
+.button {
+  height: 3em;
+
+  &.is-square {
+    // height: 1.5em;
+    // padding: 1em;
+    height: 1.5em;
+    border: none;
+
+    .icon {
+      i {
+        font-size: 1.5em !important;
+      }
+    }
+  }
+}
+
+/* slider input styles */
+input[type='range'] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  height: 5px;
+  width: 100%;
+  cursor: pointer;
+  background: #bbbbbb;
+  margin-bottom: 10px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 2px solid #aaa;
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+input[type='range']:focus {
+  outline: none;
+}

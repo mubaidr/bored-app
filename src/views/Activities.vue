@@ -1,9 +1,9 @@
 <template>
-  <div>
-    Activities
-
-    <new-activity />
-    <activity-list />
+  <div class="columns">
+    <div class="column is-offset-2 is-8">
+      <new-activity />
+      <activity-list />
+    </div>
   </div>
 </template>
 
