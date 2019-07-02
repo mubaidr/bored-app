@@ -61,6 +61,8 @@ export default new Vuex.Store({
     loadActivity(context, details) {
       context.commit("isLoading", true);
 
+      console.log(details);
+
       if (details.type || details.price || details.participants) {
         return axios
           .get(
