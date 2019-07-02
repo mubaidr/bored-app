@@ -2,9 +2,9 @@
   <div>
     <app-header />
     <div id="app" class="container">
-      <Transition mode="out-in" name="slide-up">
+      <transition mode="out-in" name="slide-up">
         <router-view />
-      </Transition>
+      </transition>
     </div>
     <app-loader />
   </div>

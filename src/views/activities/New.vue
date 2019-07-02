@@ -3,7 +3,6 @@
     <div class="columns">
       <div class="column is-6">
         <h2 class="title is-4">You should:</h2>
-
         <div class="field">
           <div class="control">
             <textarea
@@ -18,7 +17,11 @@
 
         <div class="field">
           <p class="control">
-            <button class="button is-fullwidth is-danger" @click="save">
+            <button
+              class="button is-fullwidth is-danger"
+              :disabled="!activity"
+              @click="save"
+            >
               <span class="icon">
                 <i class="fa fa-save"></i>
               </span>
@@ -37,7 +40,7 @@
           <label class="label">Type</label>
           <div class="control">
             <div class="select is-fullwidth">
-              <select v-model="activity.type">
+              <select v-model="details.type" required>
                 <option v-for="type in types" :key="type">{{ type }}</option>
               </select>
             </div>
@@ -48,10 +51,11 @@
           <label class="label">Participants</label>
           <div class="control">
             <input
-              v-model="activity.participants"
+              v-model="details.participants"
               class="input"
               type="number"
               value="1"
+              required
             />
           </div>
         </div>
@@ -60,13 +64,14 @@
           <label class="label">Budget</label>
           <div class="control">
             <input
-              v-model="activity.price"
+              v-model="details.price"
               class="slider is-fullwidth is-circle"
-              step="0.1"
+              step="0.05"
               min="0"
               max="1"
               value="0"
               type="range"
+              required
             />
             <div class="help-text">
               <span>cheap</span>
@@ -102,22 +107,32 @@ export default {
 
   data() {
     return {
-      activity: {}
+      activity: {},
+      details: {}
     };
   },
 
   computed: { ...mapState(["types"]) },
 
   created() {
-    this.load();
+    this.load().then(() => {
+      this.details = this.activity;
+    });
   },
 
   methods: {
     ...mapActions(["saveActivity", "loadActivity"]),
 
     load() {
-      this.loadActivity().then(res => {
-        this.activity = res.data;
+      return this.loadActivity(this.details).then(res => {
+        const { data } = res;
+        const { error } = data;
+
+        if (error) {
+          alert(error);
+        } else {
+          this.activity = data;
+        }
       });
     },
 

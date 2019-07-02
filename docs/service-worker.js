@@ -11,13 +11,15 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
+importScripts(
+  "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js"
+);
 
 importScripts(
   "/bored-app/precache-manifest.769f59ffb90ffb6a4c0090cd705220ff.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "bored-app"});
+workbox.core.setCacheNameDetails({ prefix: "bored-app" });
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to

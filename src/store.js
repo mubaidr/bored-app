@@ -44,6 +44,8 @@ export default new Vuex.Store({
 
     clear(state) {
       state.list = [];
+
+      console.log("hain?");
     },
 
     isLoading(state, bool) {
@@ -56,20 +58,34 @@ export default new Vuex.Store({
       context.commit("save", activity);
     },
 
-    loadActivity(context) {
+    loadActivity(context, details) {
       context.commit("isLoading", true);
-      return axios.get("/activity").then(res => {
-        context.commit("isLoading", false);
 
-        return res;
-      });
+      if (details.type || details.price || details.participants) {
+        return axios
+          .get(
+            `/activity?type=${details.type}&minprice=${details.price -
+              0.05}&maxprice=${details.price + 0.05}&participants=${
+              details.participants
+            }`
+          )
+          .then(res => {
+            context.commit("isLoading", false);
+            return res;
+          });
+      } else {
+        return axios.get(`/activity`).then(res => {
+          context.commit("isLoading", false);
+          return res;
+        });
+      }
     },
 
     removeActivity(context, id) {
       context.commit("remove", id);
     },
 
-    clearAllActivities(context) {
+    clearActivities(context) {
       context.commit("clear");
     }
   }
