@@ -64,10 +64,9 @@ export default new Vuex.Store({
       if (details.type || details.price || details.participants) {
         return axios
           .get(
-            `/activity?type=${details.type}&minprice=${details.price -
-              0.05}&maxprice=${details.price + 0.05}&participants=${
-              details.participants
-            }`
+            `/activity?type=${details.type}&price=${
+              details.price
+            }&participants=${details.participants}`
           )
           .then(res => {
             context.commit("isLoading", false);
