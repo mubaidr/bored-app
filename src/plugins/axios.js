@@ -10,7 +10,7 @@ import Vue from "vue";
 
 let config = {
   baseURL:
-    process.env.baseURL || process.env.apiUrl || "http://www.boredapi.com/api/"
+    process.env.baseURL || process.env.apiUrl || "https://www.boredapi.com/api/"
   // timeout: 60 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control
 };

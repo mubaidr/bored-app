@@ -24,16 +24,7 @@ export default new Vuex.Store({
   },
   mutations: {
     save(state, activity) {
-      const exists =
-        state.list.filter(a => {
-          return a.key === activity.key;
-        }).length !== 0;
-
-      if (!exists) {
-        state.list.push(activity);
-      } else {
-        alert("This activity is already saved!");
-      }
+      state.list.push(activity);
     },
 
     remove(state, id) {
@@ -44,8 +35,6 @@ export default new Vuex.Store({
 
     clear(state) {
       state.list = [];
-
-      console.log("hain?");
     },
 
     isLoading(state, bool) {
@@ -55,13 +44,24 @@ export default new Vuex.Store({
   actions: {
     // eslint-disable-next-line
     saveActivity(context, activity) {
-      context.commit("save", activity);
+      return new Promise((resolve, reject) => {
+        const exists =
+          context.state.list.filter(a => {
+            return a.key === activity.key;
+          }).length !== 0;
+
+        if (!exists) {
+          context.commit("save", activity);
+
+          resolve();
+        } else {
+          reject(new Error("This activity is already saved!"));
+        }
+      });
     },
 
     loadActivity(context, details) {
       context.commit("isLoading", true);
-
-      console.log(details);
 
       if (details.type || details.price || details.participants) {
         return axios

@@ -80,10 +80,12 @@ export default {
 
     clear() {
       this.clearActivities();
+      this.$toasted.show("Cleared activity list!");
     },
 
     remove(id) {
       this.removeActivity(id);
+      this.$toasted.show("Removed activity!");
     }
   }
 };

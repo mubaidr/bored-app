@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/bored-app/precache-manifest.6552fdbbd75343812a55108dd8ea602f.js"
+  "/bored-app/precache-manifest.c0c310c7f29afc0b21ca72b40f163ad2.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "bored-app"});

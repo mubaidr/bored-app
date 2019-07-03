@@ -129,7 +129,9 @@ export default {
         const { error } = data;
 
         if (error) {
-          alert(error);
+          this.$toasted.show(error, {
+            type: "error"
+          });
         } else {
           this.activity = data;
         }
@@ -137,7 +139,17 @@ export default {
     },
 
     save() {
-      this.saveActivity(this.activity);
+      this.saveActivity(this.activity)
+        .then(() => {
+          this.$toasted.show("Activity Added", {
+            type: "success"
+          });
+        })
+        .catch(error => {
+          this.$toasted.show(error, {
+            type: "error"
+          });
+        });
     }
   }
 };
